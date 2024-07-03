@@ -1,0 +1,92 @@
+# ----------------------------------------
+# 2017/06/05
+# 2024/05/31
+# 2024/07/02
+# Mistel Barocco MD600
+# ----------------------------------------
+
+include "104.mayu"
+
+keymap Global
+
+# CapsLockを Mod 0 に割り当て、単押しをIME切り替えにする。
+mod mod0 = !!Caps
+key *Caps = &Ignore # 本来の CapsLock の効果が発生しないようにする
+key m0-*Caps = &SetImeStatus(toggle)
+key R-*Caps = &Ignore # CapsLock をキーリピートした場合にIMEの切り替えが発生しないようにする
+
+# MD600は1の左隣がESCなので、これを ` に変更。
+# ESCは Mod 0 レイヤーのものを使う。
+key *Esc = *GraveAccent
+
+
+
+
+
+# ----------------------------------------
+# Mod 0
+# ----------------------------------------
+
+key M0-*M = S-*EqualsSign
+
+# emacs風カーソル移動
+key m0-*B = *Left
+key m0-*F = *Right
+key m0-*P = *Up
+key m0-*N = *Down
+
+# 単語単位のカーソル移動
+key M0-*J = C-*Left
+key M0-*K = C-*Right
+
+# 行頭／行末への移動
+key M0-*A = *Home
+key M0-*E = *End
+
+# ページ単位のスクロール
+key M0-O = PageUp
+key M0-L = PageDown
+
+# 文頭／文末への移動
+key M0-*U = C-Home
+key M0-*I = C-End
+
+# バックスペース、DEL、単語単位の削除
+key M0-*D = *Delete
+key M0-*H = *BackSpace
+key M0-*Y = C-*BackSpace
+
+# ESC
+key M0-*S = *Esc
+
+# タブ切り替え用
+key M0-*Comma = C-PageUp
+key M0-*FullStop = C-PageDown
+
+# VSCodeのナビゲーション用
+key M0-*R = A-*Left
+key M0-*T = A-*Right
+
+# VSCode 行の入れ替え
+key M0-*LeftSquareBracket = A-up
+key M0-*RightSquareBracket = A-down
+
+# アプリ終了
+key M0-*Z = A-*F4
+
+# PrintScreen
+key M0-*X = S-*PrintScreen
+
+# 2024/06/03 数字キーはファンクションキーに
+key M0-*_1 = *F1
+key M0-*_2 = *F2
+key M0-*_3 = *F3
+key M0-*_4 = *F4
+key M0-*_5 = *F5
+key M0-*_6 = *F6
+key M0-*_7 = *F7
+key M0-*_8 = *F8
+key M0-*_9 = *F9
+key M0-*_0 = *F10
+key M0-*HyphenMinus = *F11
+key M0-*EqualsSign = *F12
